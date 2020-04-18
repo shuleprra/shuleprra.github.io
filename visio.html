@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    
+    <title>Visio</title>
+
+</head>
+    <body>
+
+    <section>
+
+            <div id="box">
+              <div class="textt">
+                Kroz dokumenta prolazite na strelice<br/>
+                Da bi preuzeli prikazan dokument kliknite na levo dugme<br/>
+                Da bi preuzeli sve dokumente arhivirano kliknite desno dugme
+                </div>
+            </div>
+    </section>
+
+        </div>
+            <!-- buttons for controls slider -->
+            <footer>
+                <div class="middle">
+                <div id="kurcina">
+                     
+                </div>
+                    <div class="right">
+                    <a class="btn" href="Konferencija.rar" download="Konferencija.rar">
+                      <i class="fas fa-file-archive"></i>
+                    </a>
+                    </div>
+                </div>
+
+                <button class="prew fa fa-chevron-left" onclick="prewImage()"></button>
+                <button class="next fa fa-chevron-right" onclick="nextImage()"></button>
+
+            </footer>
+            
+
+
+
+
+
+        <script type="text/javascript">
+
+            var slider_content = document.getElementById('box');
+            var download=document.getElementById("kurcina");
+            // contain images in an array
+          var image = ['a','b', 'c', 'd','e'];
+      
+          var i = image.length;
+      
+      
+          // function for next slide 
+      
+          function nextImage(){
+              if (i<image.length) {
+                  i= i+1;
+              }else{
+                  i = 1;
+              }
+                slider_content.innerHTML = "<img src="+image[i-1]+".jpg>";
+
+              switch(i) {
+                  case 1: download.innerHTML="<a class=\"btn\" href=\"Formular za učešće na konferenciji.docx\" download=\"Formular za učešće na konferenciji.docx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 2: download.innerHTML="<a class=\"btn\" href=\"Sala.vsdx\" download=\"Sala.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 3: download.innerHTML="<a class=\"btn\" href=\"tajmlajn.vsdx\" download=\"Tajmlajn.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 4: download.innerHTML="<a class=\"btn\" href=\"mapa uma.vsdx\" download=\"Mapa uma.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 5: download.innerHTML="<a class=\"btn\" href=\"gantov.vsdx\" download=\"Gantov dijagram.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+              }
+
+                
+                
+          }
+      
+      
+          // function for prew slide
+      
+          function prewImage(){
+      
+              if (i<image.length+1 && i>1) {
+                  i= i-1;
+              }else{
+                  i = image.length;
+              }
+                slider_content.innerHTML = "<img src="+image[i-1]+".jpg>";
+                switch(i) {
+                  case 1: download.innerHTML="<a class=\"btn\" href=\"Formular za učešće na konferenciji.docx\" download=\"Formular za učešće na konferenciji.docx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 2: download.innerHTML="<a class=\"btn\" href=\"Sala.vsdx\" download=\"Sala.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 3: download.innerHTML="<a class=\"btn\" href=\"Sala.vsdx\" download=\"Sala.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 4: download.innerHTML="<a class=\"btn\" href=\"Sala.vsdx\" download=\"Sala.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+                  case 5: download.innerHTML="<a class=\"btn\" href=\"Sala.vsdx\" download=\"Sala.vsdx\"><i class=\"fas fa-download\"></i>";
+                    break;
+              }
+          }
+      
+        
+        // script for auto image slider
+      
+        /*setInterval(nextImage , 4000);*/
+      
+        </script>
+    </body>
+</html>
